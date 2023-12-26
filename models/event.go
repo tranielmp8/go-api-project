@@ -1,9 +1,8 @@
 package models
 
 import (
-	"time"
-
 	"github.com/tranielmp8/go-api-project/db"
+	"time"
 )
 
 type Event struct {

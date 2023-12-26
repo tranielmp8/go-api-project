@@ -1,10 +1,12 @@
 package routes
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/tranielmp8/go-api-project/models"
+	"fmt"
 	"net/http"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
+	"github.com/tranielmp8/go-api-project/models"
 )
 
 // function names can be lower case here bc we are using them in another file with the same package. if the package was different we would have to Capitalize the first letter to make the fuction exportable
@@ -77,7 +79,7 @@ func updateEvent(context *gin.Context) {
 
 	var updatedEvent models.Event
 	err = context.ShouldBindJSON(&updatedEvent)
-
+	fmt.Println(updatedEvent)
 	if err != nil {
 		context.JSON(http.StatusBadRequest, gin.H{"message": "Could not parse requested data"})
 		return
